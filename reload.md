@@ -1,0 +1,136 @@
+# Before a reload
+Make sure all code is pushed
+Backup config files
+
+# Just after the reload
+Map library folders to OneDrive
+Set scaling to 200%
+
+# PowerShell
+``` powershell
+# install scoop
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+
+# turn off snap assist
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name SnapAssist -Value 0
+
+# TODO add powershell script for doing nothing when lid is closed (on battery and plugged in)
+# set cursor thickness
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name CaretWidth -Value 3
+
+# enable wsl
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+# install azure cli
+Start-Process -PSPath "https://aka.ms/installazurecliwindows"
+
+# install iot edge extension
+az extension add -n azure-cli-iot-ext
+
+# install azcopy
+# https://azcopyvnext.azureedge.net/release20190301/azcopy_windows_amd64_10.0.8.zip
+
+scoop bucket add extras
+scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub
+scoop bucket add nerd-fonts
+
+# manually install FiraCode
+[environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)),'USER')
+
+# install git-credential-manager for Windows
+(new-object System.Net.WebClient).DownloadFile("https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/download/1.18.5/gcmw-v1.18.5.zip", (Join-Path -Path $pwd -ChildPath '\gcmw.zip'))
+Expand-Archive -LiteralPath gcmw.zip
+./gcmw/install.cmd
+git config --global credential.helper "c:\Users\jerem\bin\git-credential-helper.exe"
+git config --global user.name "Jeremy Foster"
+git config --global user.email "jeremy.foster@live.com"
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+npm login
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator msbot localtunnel nodemon irish-pub @angular/cli
+
+# install vscode (tried scoop, but vscode updates don't work)
+# https://vscode-update.azurewebsites.net/latest/win32-x64-user/stable
+
+# TODO: restore vscode config
+
+# TODO: install VS Code extensions
+
+# Ignore irrelevant SSIDs
+netsh wlan show networks | grep SSID #list them
+netsh wlan add filter permission=block ssid="<Network Name>" networktype=infrastructure #ignore one
+
+```
+
+# Ubuntu
+
+``` bash
+sudo add-apt-repository ppa:cpick/hub #required for installing the hub package
+apt update
+sudo apt install git p7zip-full ncdu cowsay figlet hub
+
+# reference git-credential-manager from Windows
+git config --global credential.helper "/mnt/c/Users/jerem/bin/git-credential-manager.exe"
+git config --global user.name "Jeremy Foster"
+git config --global user.email "jeremy.foster@live.com"
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# install nvs and node
+export NVS_HOME="$HOME/.nvs"
+git clone https://github.com/jasongin/nvs "$NVS_HOME"
+. "$NVS_HOME/nvs.sh" install
+nvs add latest
+nvs use latest
+
+# TODO: Execute .mybashrc from .bashrc
+npm login
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual gh lite-server speed-test yo calculator msbot localtunnel nodemon irish-pub @angular/cli
+
+# install az cli
+sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
+AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
+     --keyserver packages.microsoft.com \
+     --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
+sudo apt update
+sudo apt install azure-cli
+az login
+
+# install iot edge extension
+az extension add -n azure-cli-iot-ext
+
+# install azcopy
+curl https://azcopyvnext.azureedge.net/release20190301/azcopy_linux_amd64_10.0.8.tar.gz -o /tmp/azcopy.tar.gz
+mkdir /bin/azcopy
+sudo tar -xf /tmp/azcopy.tar.gz --directory /bin/azcopy
+
+```
+
+# Install from Windows Store
+Ubuntu
+ReddPlanet (for background changer)
+Microsoft Todo
+Network Speed Test
+MSN Money
+Kodi
+Nook
+Spotify
+Libby
+Windows DVD Player
+MS Expense (link)
+
+# Install from Web
+Docker Desktop (link)
+Coastal Explorer (link)
+Home Designer (link)
+SnagIt (link)
+Office
+Teams
+Affinity Designer
+Affinity Photo
+Nitro (link)
+Postman
+Edge Browser (private preview)
