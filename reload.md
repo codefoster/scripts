@@ -28,14 +28,17 @@ Start-Process -PSPath "https://aka.ms/installazurecliwindows"
 # install iot edge extension
 az extension add -n azure-cli-iot-ext
 
-# install azcopy
-# https://azcopyvnext.azureedge.net/release20190301/azcopy_windows_amd64_10.0.8.zip
-
 scoop bucket add extras
 scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub
 scoop bucket add nerd-fonts
 
+# install azcopy
+(new-object System.Net.WebClient).DownloadFile("https://aka.ms/downloadazcopy-v10-windows", (Join-Path -Path $pwd -ChildPath '\azcopy.zip'))
+Expand-Archive -LiteralPath azcopy.zip
+# TODO: copy the binary somewhere and put it in the path
+
 # manually install FiraCode
+
 [environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)),'USER')
 
 # install git-credential-manager for Windows
@@ -69,6 +72,10 @@ netsh wlan add filter permission=block ssid="<Network Name>" networktype=infrast
 sudo add-apt-repository ppa:cpick/hub #required for installing the hub package
 apt update
 sudo apt install git p7zip-full ncdu cowsay figlet hub
+
+#install azcopy
+# download tar from https://aka.ms/downloadazcopy-v10-linux
+# copy it somewhere and get it in the path
 
 # reference git-credential-manager from Windows
 git config --global credential.helper "/mnt/c/Users/jerem/bin/git-credential-manager.exe"
