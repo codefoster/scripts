@@ -29,8 +29,10 @@ Start-Process -PSPath "https://aka.ms/installazurecliwindows"
 az extension add -n azure-cli-iot-ext
 
 scoop bucket add extras
-scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub
+scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm
 scoop bucket add nerd-fonts
+
+# TODO: setup launching of my custom profile (including hiding curl alias)
 
 # install azcopy
 (new-object System.Net.WebClient).DownloadFile("https://aka.ms/downloadazcopy-v10-windows", (Join-Path -Path $pwd -ChildPath '\azcopy.zip'))
@@ -63,6 +65,7 @@ npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-
 # Ignore irrelevant SSIDs
 netsh wlan show networks | grep SSID #list them
 netsh wlan add filter permission=block ssid="<Network Name>" networktype=infrastructure #ignore one
+
 
 ```
 
@@ -113,6 +116,12 @@ az extension add -n azure-cli-iot-ext
 curl https://azcopyvnext.azureedge.net/release20190301/azcopy_linux_amd64_10.0.8.tar.gz -o /tmp/azcopy.tar.gz
 mkdir /bin/azcopy
 sudo tar -xf /tmp/azcopy.tar.gz --directory /bin/azcopy
+
+# install kubernetes and helm
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+curl -L https://git.io/get_helm.sh | bash
 
 ```
 
