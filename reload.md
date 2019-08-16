@@ -65,21 +65,40 @@ mikestead.dotenv
 eamodio.gitlens
 ms-vscode.csharp
 vsciot-vscode.azure-iot-tools
+    vsciot-vscode.azure-iot-toolkit
+    vsciot-vscode.azure-iot-edge
+    vsciot-vscode.vscode-iot-workbench
 ms-azuretools.vscode-azurefunctions
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-vsliveshare.vsliveshare
 ryu1kn.partial-diff
-jasonnutter.search-node-modules
 shan.code-settings-sync
 evilz.vscode-reveal
 redhat.vscode-yaml
 ms-vscode.powershell
 ms-python.python
-dbaeumer.vscode-eslint
 ms-azuretools.vscode-docker
 ms-vscode.vscode-typescript-tslint-plugin
 ms-vscode.azurecli
 ms-vscode.vscode-node-azure-pack
+ms-vscode-remote.remote-wsl
+mhutchie.git-graph
+alefragnani.Bookmarks
+humao.rest-client
+formulahendry.code-runner
+waderyan.nodejs-extension-pack
+    dbaeumer.vscode-eslint
+    eg2.vscode-npm-script
+    xabikos.JavaScriptSnippets
+    jasonnutter.search-node-modules
+    christian-kohler.npm-intellisense
+    christian-kohler.path-intellisense
+Mikael.Angular-BeastCode
+nrwl.angular-console
+alexiv.vscode-angular2-files
+msjsdiag.debugger-for-chrome
+anseki.vscode-color
+ms-vscode-remote.vscode-remote-extensionpack
 
 
 # Ignore irrelevant SSIDs
