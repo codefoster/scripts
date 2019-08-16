@@ -53,7 +53,7 @@ git config --global user.email "jeremy.foster@live.com"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
 npm login
-npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator msbot localtunnel nodemon irish-pub @angular/cli
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator msbot localtunnel  nodemon irish-pub @angular/cli @microsoft/rush
 
 # install vscode (tried scoop, but vscode updates don't work)
 # https://vscode-update.azurewebsites.net/latest/win32-x64-user/stable
@@ -61,6 +61,26 @@ npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-
 # TODO: restore vscode config
 
 # TODO: install VS Code extensions
+mikestead.dotenv
+eamodio.gitlens
+ms-vscode.csharp
+vsciot-vscode.azure-iot-tools
+ms-azuretools.vscode-azurefunctions
+ms-kubernetes-tools.vscode-kubernetes-tools
+ms-vsliveshare.vsliveshare
+ryu1kn.partial-diff
+jasonnutter.search-node-modules
+shan.code-settings-sync
+evilz.vscode-reveal
+redhat.vscode-yaml
+ms-vscode.powershell
+ms-python.python
+dbaeumer.vscode-eslint
+ms-azuretools.vscode-docker
+ms-vscode.vscode-typescript-tslint-plugin
+ms-vscode.azurecli
+ms-vscode.vscode-node-azure-pack
+
 
 # Ignore irrelevant SSIDs
 netsh wlan show networks | grep SSID #list them
@@ -95,7 +115,7 @@ nvs use latest
 
 # TODO: Execute .mybashrc from .bashrc
 npm login
-npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual gh lite-server speed-test yo calculator msbot localtunnel nodemon irish-pub @angular/cli
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual gh lite-server speed-test yo calculator msbot localtunnel nodemon irish-pub @angular/cli @microsoft/rush
 
 # install az cli
 sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y

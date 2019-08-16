@@ -10,6 +10,17 @@ az webapp create -g foo -p foo-asp -n foo-site -i drupal
 ``` bash
 # show the public ip
 az vm show -n ubuntu -g unwesteurope -d --query publicIps
+
+
+# create and attach a new managed disk to a vm
+az vm disk attach -g <resource group> --vm-name <vm name> --name <disk name> --new --size-gb <size>
+
+# detach a disk
+az vm disk detach -g <resource group> --vm-name <vm name> -n <disk name>
+
+# delete the disk
+az disk delete -g <resource group> -n <disk name>
+
 ```
 
 ## Azure Database for MySQL
