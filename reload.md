@@ -29,8 +29,8 @@ Start-Process -PSPath "https://aka.ms/installazurecliwindows"
 az extension add -n azure-cli-iot-ext
 
 scoop bucket add extras
-scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm
 scoop bucket add nerd-fonts
+scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode
 
 # TODO: setup launching of my custom profile (including hiding curl alias)
 
@@ -38,8 +38,6 @@ scoop bucket add nerd-fonts
 (new-object System.Net.WebClient).DownloadFile("https://aka.ms/downloadazcopy-v10-windows", (Join-Path -Path $pwd -ChildPath '\azcopy.zip'))
 Expand-Archive -LiteralPath azcopy.zip
 # TODO: copy the binary somewhere and put it in the path
-
-# manually install FiraCode
 
 [environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)),'USER')
 
