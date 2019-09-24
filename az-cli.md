@@ -39,3 +39,19 @@ az mysql db delete -n drupal -s foo-data -g foo
 # Get Properties
 az mysql server show -n foo-data -g foo -o json
 ```
+
+## Azure Service Bus
+
+
+# Create a subscription (with sessions)
+az servicebus topic subscription create -g x --namespace-name x --topic-name x -n car1 --enable-session
+
+# Delete a subscription
+az servicebus topic subscription delete -g x --namespace-name x --topic-name x -n car1
+
+# Create a subscription rule
+az servicebus topic subscription rule create -g ehrx --namespace-name exrxsb --topic-name messages --subscription-name car1 --name carId --filter-sql-expression carId=1
+
+## IoT Hub
+
+# 
