@@ -30,7 +30,7 @@ az extension add -n azure-cli-iot-ext
 
 scoop bucket add extras
 scoop bucket add nerd-fonts
-scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode
+scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode dotnet-sdk servicebusexplorer
 
 # TODO: setup launching of my custom profile (including hiding curl alias)
 
@@ -42,16 +42,17 @@ Expand-Archive -LiteralPath azcopy.zip
 [environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)),'USER')
 
 # install git-credential-manager for Windows
-(new-object System.Net.WebClient).DownloadFile("https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/download/1.18.5/gcmw-v1.18.5.zip", (Join-Path -Path $pwd -ChildPath '\gcmw.zip'))
-Expand-Archive -LiteralPath gcmw.zip
-./gcmw/install.cmd
-git config --global credential.helper "c:\Users\jerem\bin\git-credential-helper.exe"
+# not using because I believe it works to just use wincred
+# (new-object System.Net.WebClient).DownloadFile("https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/download/1.18.5/#gcmw-v1.18.5.zip", (Join-Path -Path $pwd -ChildPath '\gcmw.zip'))
+# Expand-Archive -LiteralPath gcmw.zip
+# ./gcmw/install.cmd
+git config --global credential.helper wincred
 git config --global user.name "Jeremy Foster"
 git config --global user.email "jeremy.foster@live.com"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
 npm login
-npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator msbot localtunnel  nodemon irish-pub @angular/cli @microsoft/rush
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator localtunnel  nodemon irish-pub @angular/cli @microsoft/rush
 
 # install vscode (tried scoop, but vscode updates don't work)
 # https://vscode-update.azurewebsites.net/latest/win32-x64-user/stable
@@ -75,6 +76,7 @@ evilz.vscode-reveal
 redhat.vscode-yaml
 ms-vscode.powershell
 ms-python.python
+ms-vscode.cpptools
 ms-azuretools.vscode-docker
 ms-vscode.vscode-typescript-tslint-plugin
 ms-vscode.azurecli
@@ -97,7 +99,9 @@ alexiv.vscode-angular2-files
 msjsdiag.debugger-for-chrome
 anseki.vscode-color
 ms-vscode-remote.vscode-remote-extensionpack
-
+yzhang.markdown-all-in-one
+streetsidesoftware.code-spell-checker
+jebbs.plantuml
 
 # Ignore irrelevant SSIDs
 netsh wlan show networks | grep SSID #list them
@@ -118,7 +122,7 @@ sudo apt install git p7zip-full ncdu cowsay figlet hub
 # copy it somewhere and get it in the path
 
 # reference git-credential-manager from Windows
-git config --global credential.helper "/mnt/c/Users/jerem/bin/git-credential-manager.exe"
+git config --global credential.helper store
 git config --global user.name "Jeremy Foster"
 git config --global user.email "jeremy.foster@live.com"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
@@ -132,7 +136,7 @@ nvs use latest
 
 # TODO: Execute .mybashrc from .bashrc
 npm login
-npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual gh lite-server speed-test yo calculator msbot localtunnel nodemon irish-pub @angular/cli @microsoft/rush
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual gh lite-server speed-test yo calculator localtunnel nodemon irish-pub @angular/cli @microsoft/rush
 
 # install az cli
 sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
