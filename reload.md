@@ -186,6 +186,7 @@ Spotify
 Libby
 Windows DVD Player
 MS Expense (link)
+PureText
 
 # Install from Web
 Docker Desktop (link)
