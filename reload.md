@@ -144,7 +144,7 @@ nvs use latest
 
 # TODO: Execute .mybashrc from .bashrc
 npm login
-npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual gh lite-server speed-test yo calculator localtunnel nodemon irish-pub @angular/cli @microsoft/rush
+npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator localtunnel nodemon irish-pub @angular/cli @microsoft/rush
 
 # install az cli
 sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
