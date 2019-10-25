@@ -22,6 +22,9 @@ Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name CaretWidth -Value 3
 # enable wsl
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
+# register a cmd startup script (so I can run script when a cmd shell opens)
+reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "C:\Users\jerem\OneDrive\config\init.cmd" /f
+
 # install azure cli
 Start-Process -PSPath "https://aka.ms/installazurecliwindows"
 
