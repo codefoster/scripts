@@ -146,6 +146,26 @@ nvs use latest
 npm login
 npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator localtunnel nodemon irish-pub @angular/cli @microsoft/rush
 
+# install docker
+# from https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
+sudo apt-get update -y
+sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
+# Download and add Docker's official public PGP key.
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Verify the fingerprint.
+sudo apt-key fingerprint 0EBFCD88
+
+# If you want to live on the edge, you can change "stable" below to "test" or "nightly". I highly recommend sticking with stable!
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update -y
+sudo apt-get install -y docker-ce
+sudo usermod -aG docker $USER
+pip install --user docker-compose
+# make sure ~/.profile contains export PATH="$PATH:$HOME/.local/bin"
+echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc
+
+
 # install az cli
 sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
 AZ_REPO=$(lsb_release -cs)
