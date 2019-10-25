@@ -102,6 +102,7 @@ ms-vscode-remote.vscode-remote-extensionpack
 yzhang.markdown-all-in-one
 streetsidesoftware.code-spell-checker
 jebbs.plantuml
+bencoleman.armview
 
 # Ignore irrelevant SSIDs
 netsh wlan show networks | grep SSID #list them
