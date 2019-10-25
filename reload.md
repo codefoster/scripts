@@ -30,7 +30,7 @@ az extension add -n azure-cli-iot-ext
 
 scoop bucket add extras
 scoop bucket add nerd-fonts
-scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode dotnet-sdk servicebusexplorer
+scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode dotnet-sdk servicebusexplorer postman sysinternals
 
 # TODO: setup launching of my custom profile (including hiding curl alias)
 
