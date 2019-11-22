@@ -16,4 +16,9 @@ openssl pkcs12 -export -in mycert.pem -inkey mykey.pem -certfile mycert.pem -out
 
 # Unzip a file
 7z x <file> -o<directory> # the `-o` argument doesn't want a space after it
-7z a <archive name> ./<directory>/*
+
+# Zip a file
+7z a <archive name> <directory>
+
+# Zip a file and ignore certain folders
+7z a <archive name> <directory> '-xr!node_modules' '-xr!dist'
