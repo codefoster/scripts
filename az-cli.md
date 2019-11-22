@@ -1,25 +1,25 @@
 ## Web App
 ``` bash
 # Create a Webapp from a Container Image
-az group create -n foo -l westus
-az appservice plan create -n foo-asp -g foo --sku B1 --is-linux
-az webapp create -g foo -p foo-asp -n foo-site -i drupal
+az group create -n <group> -l <location>
+az appservice plan create -n <asp> -g <group> --sku <sku> --is-linux
+az webapp create -g <group> -p <asp> -n <site> -i <image>
 ```
 
 ## Virtual Machines
 ``` bash
 # show the public ip
-az vm show -n ubuntu -g unwesteurope -d --query publicIps
+az vm show -n <name> -g <group> -d --query publicIps
 
 
 # create and attach a new managed disk to a vm
-az vm disk attach -g <resource group> --vm-name <vm name> --name <disk name> --new --size-gb <size>
+az vm disk attach -g <group> --vm-name <vm> --name <disk> --new --size-gb <size>
 
 # detach a disk
-az vm disk detach -g <resource group> --vm-name <vm name> -n <disk name>
+az vm disk detach -g <group> --vm-name <vm> -n <disk>
 
 # delete the disk
-az disk delete -g <resource group> -n <disk name>
+az disk delete -g <group> -n <disk>
 
 ```
 
