@@ -110,6 +110,28 @@ streetsidesoftware.code-spell-checker
 jebbs.plantuml
 bencoleman.armview
 
+//also in my install list
+azure-account v0.8.7
+azure-pipelines v1.157.4
+azurerm-vscode-tools v0.8.3
+vscode-azurefunctions v0.20.1
+mssql v1.8.0
+remote-containers v0.94.0
+remote-ssh v0.48.0
+remote-ssh-edit v0.48.0
+remote-ssh-explorer v0.48.0
+search-node-modules v1.3.0
+team v1.161.0
+vscode-aks-tools v0.0.4
+vscode-apimanagement v0.1.1
+vscode-azureappservice v0.16.2
+vscode-azurestorage v0.7.2
+vscode-cosmosdb v0.11.0
+vscode-eslint v2.0.11
+vscode-iot-device-cube v0.1.4
+vscode-iot-workbench v0.11.0
+xml v2.5.0
+
 # Ignore irrelevant SSIDs
 netsh wlan show networks | grep SSID #list them
 netsh wlan add filter permission=block ssid="<Network Name>" networktype=infrastructure #ignore one
