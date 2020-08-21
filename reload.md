@@ -34,9 +34,14 @@ Start-Process -PSPath "https://aka.ms/installazurecliwindows"
 # install iot edge extension
 az extension add -n azure-cli-iot-ext
 
+# winget apps
+winget install TechSmith.Snagit
+winget install -e --id Docker.DockerDesktop
+
+scoop install git
 scoop bucket add extras
 scoop bucket add nerd-fonts
-scoop install git openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode dotnet-sdk servicebusexplorer postman sysinternals
+scoop install openssh 7zip nvs jq curl python azure-cli handbrake hyper beyondcompare figlet hub kubectl helm FiraCode dotnet-sdk servicebusexplorer postman sysinternals
 
 # TODO: setup launching of my custom profile (including hiding curl alias)
 
@@ -168,34 +173,11 @@ nvs use latest
 npm login
 npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator localtunnel nodemon irish-pub @angular/cli @microsoft/rush
 
-# install docker
-# from https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
-sudo apt-get update -y
-sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
-# Download and add Docker's official public PGP key.
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-# Verify the fingerprint.
-sudo apt-key fingerprint 0EBFCD88
-
-# If you want to live on the edge, you can change "stable" below to "test" or "nightly". I highly recommend sticking with stable!
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update -y
-sudo apt-get install -y docker-ce
-sudo usermod -aG docker $USER
-pip install --user docker-compose
-# make sure ~/.profile contains export PATH="$PATH:$HOME/.local/bin"
-echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc
-
-
 # install az cli
 sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
 AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-    sudo tee /etc/apt/sources.list.d/azure-cli.list
-sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
-     --keyserver packages.microsoft.com \
-     --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv --keyserver packages.microsoft.com --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
 sudo apt update
 sudo apt install azure-cli
 az login
