@@ -35,7 +35,6 @@ Start-Process -PSPath "https://aka.ms/installazurecliwindows"
 az extension add -n azure-cli-iot-ext
 
 # winget apps
-winget install TechSmith.Snagit
 winget install -e --id Docker.DockerDesktop
 
 scoop install git
