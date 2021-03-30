@@ -75,6 +75,9 @@ done
 ffmpeg -f concat -safe 0 -i barista-2019-10-19.txt -c copy barista-2019-10-19.wav
 ```
 
+# Extract audio from a video file
+ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac
+
 # SSH Keys
 - It's fine if the key on the remote has a username in the file other than what you're signing in as.
 
