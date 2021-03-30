@@ -148,7 +148,7 @@ netsh wlan add filter permission=block ssid="<Network Name>" networktype=infrast
 ``` bash
 sudo add-apt-repository ppa:cpick/hub #required for installing the hub package
 sudo apt update
-sudo apt install git p7zip-full ncdu cowsay figlet hub curl python python-pip
+sudo apt install git p7zip-full ncdu cowsay figlet hub curl python python-pip net-tools
 
 
 #install azcopy
