@@ -62,7 +62,7 @@ git config --global user.email "jeremy.foster@live.com"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
 npm login
-npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-tools jmespath json-server npm-check-updates casual lite-server speed-test yo calculator localtunnel  nodemon irish-pub @angular/cli @microsoft/rush
+npm install -g typescript gitignore cowsay hexo-cli wscat2  jmespath json-server faker npm-check-updates lite-server speed-test yo calculator localtunnel  nodemon irish-pub @angular/cli @microsoft/rush
 
 # install vscode (tried scoop, but vscode updates don't work)
 # https://vscode-update.azurewebsites.net/latest/win32-x64-user/stable
@@ -70,6 +70,8 @@ npm install -g typescript gitignore cowsay hexo-cli wscat2 azure-functions-core-
 # TODO: restore vscode config
 
 # TODO: install VS Code extensions
+suhay.vscode-editor-group-minimizer
+denoland.vscode-deno
 mikestead.dotenv
 eamodio.gitlens
 ms-vscode.csharp
